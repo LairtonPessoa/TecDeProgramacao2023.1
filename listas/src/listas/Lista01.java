@@ -1,6 +1,6 @@
 package listas;
 
-public class Lista1 {
+public class Lista01 {
 
 	public static void main(String[] args) {
 		int a=6, b=14;
