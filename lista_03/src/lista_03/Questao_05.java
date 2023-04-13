@@ -2,10 +2,10 @@ package lista_03;
 
 public class Questao_05 {
 
-	public static int[] copiaVetor(int vetor[], int tamanho) {
-		int copia[] = new int[tamanho];
+	public static int[] copiaVetor(int vetor[]) {
+		int copia[] = new int[vetor.length];
 		
-		for(int i=0;i<tamanho;i++) {
+		for(int i=0;i<vetor.length;i++) {
 			copia[i]=vetor[i];
 		}
 		return copia;
@@ -16,7 +16,7 @@ public class Questao_05 {
 		System.out.println("Questao 05");
 		
 		int vet[] = {49,8,-1,0,10,-84};
-		int copia[]=copiaVetor(vet, vet.length);
+		int copia[]=copiaVetor(vet);
 
 		System.out.print("O vetor eh: { ");
 		for (int i = 0; i < vet.length; i++) {
