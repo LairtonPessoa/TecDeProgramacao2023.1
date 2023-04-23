@@ -24,14 +24,20 @@ public class Main {
 		
 		Item ssd = new Item(17400, "SSD", 1, 250);
 		Item foneDeOuvido = new Item(1211, "Fone de Ouvido", 5, 12.5);
+		Item capinha = new Item(2, "Capinha de celular", 7, 15.5);
 		
 		Fatura fatura = new Fatura();
 		fatura.addItemToFatura(ssd);
 		fatura.addItemToFatura(foneDeOuvido);
-
-		System.out.println(fatura.getValorFatura());
+		fatura.addItemToFatura(capinha);
 		
-		System.out.println(fatura.descontoFatura(0.1));
+		System.out.println("--------------------------------FATURA------------------------------------");
+		for(int i=0;i<fatura.listaDeItems.size();i++) {
+			System.out.println(fatura.listaDeItems.get(i).getItemDescription() +" " + fatura.listaDeItems.get(i).getQuantidade() + " x " + fatura.listaDeItems.get(i).getUnitPrice());
+		}
+		System.out.println("Preco total: " + fatura.getValorFatura());
+		
+		System.out.println("preco com desconto: " + fatura.descontoFatura(0.1));
 		
 		
 	}
