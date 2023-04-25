@@ -37,7 +37,7 @@ public class Main {
 		}
 		System.out.println("Preco total: " + fatura.getValorFatura());
 		
-		System.out.println("preco com desconto: " + fatura.descontoFatura(0.1));
+		System.out.println("Preco com desconto: " + fatura.descontoFatura(0.1));
 		
 		
 	}

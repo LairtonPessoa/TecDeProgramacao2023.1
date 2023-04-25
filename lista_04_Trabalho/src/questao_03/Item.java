@@ -5,7 +5,7 @@ public final class Item {
 	private int itemNumber;
 	private String itemDescription;
 	private int quantidade;
-	private double unitPrice;
+	private float unitPrice;
 	
 	public Item(int itemNumber, String itemDescription, int quantidade, double unitPrice) {
 		if(quantidade<0)
@@ -13,9 +13,9 @@ public final class Item {
 		else
 			this.quantidade=quantidade;
 		if(unitPrice<0)
-			this.unitPrice=0.0;
+			this.unitPrice=(float) 0.0;
 		else
-			this.unitPrice=unitPrice;
+			this.unitPrice=(float) unitPrice;
 		this.itemNumber=itemNumber;
 		this.itemDescription=itemDescription;
 	}
@@ -49,7 +49,7 @@ public final class Item {
 	}
 
 	public void setUnitPrice(double unitPrice) {
-		this.unitPrice = unitPrice;
+		this.unitPrice = (float) unitPrice;
 	}
 	
 	

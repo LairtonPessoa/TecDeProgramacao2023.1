@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Fatura {
 
 	protected ArrayList<Item> listaDeItems;
-	private double faturaTotal;
+	private float faturaTotal;
 	
 	public Fatura() {
 		listaDeItems = new ArrayList<Item>();
@@ -14,7 +14,7 @@ public class Fatura {
 		listaDeItems.add(item);
 	}
 	
-	public double getValorFatura() {
+	public float getValorFatura() {
 		faturaTotal=0;
 		for(int i=0;i<listaDeItems.size();i++) {
 			faturaTotal+=(listaDeItems.get(i).getUnitPrice()*listaDeItems.get(i).getQuantidade());
@@ -22,7 +22,7 @@ public class Fatura {
 		return faturaTotal;
 	}
 	
-	public double descontoFatura(double porcentagem) {
+	public float descontoFatura(double porcentagem) {
 		faturaTotal-=(faturaTotal*porcentagem);
 		return faturaTotal;
 	}

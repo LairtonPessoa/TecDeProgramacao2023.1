@@ -4,8 +4,8 @@ public class Empregado {
 
 	private String primeiroNome;
 	private String sobrenome;
-	private double salarioMensal;
-	private double salarioAnual;
+	private float salarioMensal;
+	private float salarioAnual;
 	
 	public Empregado(String firstName, String lastName, double salarioMensal) {
 		primeiroNome=firstName;
@@ -13,7 +13,7 @@ public class Empregado {
 		if(salarioMensal<0) 
 			this.salarioMensal=0;
 		else
-			this.salarioMensal=salarioMensal;
+			this.salarioMensal=(float) salarioMensal;
 	}
 	
 	public void setFirstName(String firstName) {
@@ -33,7 +33,7 @@ public class Empregado {
 	}
 	
 	public void setSalarioMensal(double salarioMensal) {
-		this.salarioMensal=salarioMensal;
+		this.salarioMensal=(float) salarioMensal;
 	}
 	
 	public double getSalarioMensal() {
