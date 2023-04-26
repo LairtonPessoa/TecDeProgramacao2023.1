@@ -30,7 +30,51 @@ public class Main {
 		i. Crie uma classe cliente que poderá usar uma agenda.
 		j. Faça uma classe main para testar seu sistema criado.*/
 		System.out.println("Questao 05");
+		
+		Contato fulano = new Contato(1000, "Fulano", "fulano@alu.ufc.br", 94548751);
+		Contato ciclano = new Contato(1500, "Ciclano", "ciclano@alu.ufc.br", 48754869);
+		Contato beltrano = new Contato(1427, "Beltrano", "beltrano@alu.ufc.br",25483620);
+		
+		System.out.println(fulano.getEmail());
+		System.out.println(ciclano.getEmail());
+		System.out.println(beltrano.getEmail());
+		
+		fulano.setEndereco("Rua Dr.Josias Nº 36");
+		ciclano.setEndereco("Rua Sebastião Miranda Nº 571");
+		beltrano.setEndereco("Rua Monsenhor Candido Nº 827");
+		
+		fulano.printDadosContato();
+		if(fulano.verificarContatoPreenchido()==false)
+			System.out.println("Algum dado esta faltando");
+		else
+			System.out.println("Todos os dados preenchidos");
+		
+	    fulano.setObs("Nao sei");
+	    ciclano.setObs("sei nao");
+	    beltrano.setObs("nem conheco");
+	    
+	    fulano.printDadosContato();
+	    if(fulano.verificarContatoPreenchido()==false)
+			System.out.println("Algum dado esta faltando");
+		else
+			System.out.println("Todos os dados preenchidos");
+		
+		Agenda minhaAgenda = new Agenda("Agenda de Lairton", "Minha Agenda");
+		minhaAgenda.addCttToAgenda(fulano);
+		minhaAgenda.addCttToAgenda(ciclano);
+		minhaAgenda.addCttToAgenda(beltrano);
 
+		Cliente c = new Cliente(minhaAgenda);
+		
+		System.out.println("\n*********************AGENDA*********************");
+		System.out.println(c.agenda.name);
+		System.out.println(c.agenda.descricao);
+		for (int i = 0; i < minhaAgenda.listaDeContatos.size(); i++) {
+			c.agenda.listaDeContatos.get(i).printDadosContato();
+			
+		}
+		
+		
 	}
 
 }

@@ -36,16 +36,16 @@ public class Empregado {
 		this.salarioMensal=(float) salarioMensal;
 	}
 	
-	public double getSalarioMensal() {
+	public float getSalarioMensal() {
 		return salarioMensal; 
 	}
 	
-	public double getSalarioAnual() {
+	public float getSalarioAnual() {
 		salarioAnual=12*salarioMensal;
 		return salarioAnual;
 	}
 	
-	public double increaseSalario(double porcentagem) {
+	public float increaseSalario(double porcentagem) {
 		salarioMensal+=(salarioMensal*porcentagem);
 		return salarioMensal;
 	}
