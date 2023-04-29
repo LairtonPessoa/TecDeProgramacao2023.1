@@ -25,11 +25,11 @@ public class Plano {
 	public void exibirPlano() {
 		for (int i = 0; i < listaDeCelulas.size(); i++) {
 			if(listaDeCelulas.get(i).entidade!=null&&listaDeCelulas.get(i).entidade.getClass()==RoboAndador.class) {
-				System.out.print("@    ");
+				System.out.print(" A    ");
 			}if(listaDeCelulas.get(i).entidade!=null&&listaDeCelulas.get(i).entidade.getClass()==Peao.class) {
-				System.out.print("P    ");
+				System.out.print(" P    ");
 			}if(listaDeCelulas.get(i).entidade==null) {
-				System.out.print("?    ");
+				System.out.print("[ ]   ");
 			}
 			if(listaDeCelulas.get(i).posicaoYdaCelula%tamanhoY==0) {
 				System.out.println("\n");
