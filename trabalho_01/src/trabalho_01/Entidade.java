@@ -29,9 +29,9 @@ public abstract class Entidade {
 		
 	}
 
-	//public abstract void avancarNoPlano(int numeroDeCelulasParaAvancar);
+	//public abstract void avancarNoPlano();
 
-	//public abstract void retrocederNoPlano(int numeroDeCelulasParaRetroceder);
+	//public abstract void retrocederNoPlano();
 
 	
 }

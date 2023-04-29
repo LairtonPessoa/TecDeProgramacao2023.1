@@ -7,23 +7,16 @@ public class Main {
 
 		Plano p = new Plano(4, 4);
 		
-		RoboAndador roboAndador = new RoboAndador(2, "Robo andador", 4, 2, p);
-		
+		RoboAndador roboAndador = new RoboAndador(2, "Robo andador", 3, 2, p);
+		Peao peao  = new Peao(4, "Peao", 4, 1, p);
+		p.exibirPlano();
 		System.out.println(roboAndador.verificarOndeTemRobo());
-		
-		roboAndador.avancarNoPlano(3);
-		
+		roboAndador.avancarNoPlano(1);
+		peao.avancarNoPlano();
 		System.out.println("\n");
 		
+		p.exibirPlano();
 		System.out.println(roboAndador.verificarOndeTemRobo());
-		
-		roboAndador.retrocederNoPlano(1);
-		
-		System.out.println("\n");
-		
-		System.out.println(roboAndador.verificarOndeTemRobo());
-		
-		
 		
 		
 		
