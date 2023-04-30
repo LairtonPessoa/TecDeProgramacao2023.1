@@ -13,7 +13,7 @@ public class RoboAndador extends Entidade{
 	
 	public String verificarOndeTemRobo() {
 		for (int i = 0; i < plano.listaDeCelulas.size(); i++) {
-			if(plano.listaDeCelulas.get(i).entidade!=null&&plano.listaDeCelulas.get(i).entidade==this) {
+			if(plano.listaDeCelulas.get(i).entidade!=null&&plano.listaDeCelulas.get(i).entidade!=this) {
 				return "Celula x: " + plano.listaDeCelulas.get(i).posicaoXdaCelula + " y: " + plano.listaDeCelulas.get(i).posicaoYdaCelula + " Tem Robo";
 			}
 		}
