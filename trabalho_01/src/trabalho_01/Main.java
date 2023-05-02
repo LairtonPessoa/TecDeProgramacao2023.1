@@ -1,9 +1,9 @@
+
 package trabalho_01;
 
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		Plano p = new Plano(5, 5);
 		
@@ -13,14 +13,13 @@ public class Main {
 		System.out.println("\n");
 		
 		peao.avancarNoPlano();
-		roboAndador.avancarNoPlano(2);
+		roboAndador.retrocederNoPlano(0);
 		p.exibirPlano();
 		System.out.println("\n");
 		
 		peao.avancarNoPlano();
-		roboAndador.retrocederNoPlano(3);
+		roboAndador.avancarNoPlano(3);
 		p.exibirPlano();
-		System.out.println("\n");
 		
 		
 	}

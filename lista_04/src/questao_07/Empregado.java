@@ -1,9 +1,15 @@
 package questao_07;
 
-public class Empregado {
+public abstract class Empregado {
 
 	public String nome;
 	protected float salario;
+	
+	
+	public Empregado(String nome, double salario) {
+		this.nome = nome;
+		this.salario = (float)salario;
+	}
 	public String getNome() {
 		return nome;
 	}
@@ -23,5 +29,5 @@ public class Empregado {
 	}
 	
 	
-	//get e set e to string
+	
 }

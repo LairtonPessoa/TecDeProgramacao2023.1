@@ -24,14 +24,6 @@ public abstract class Entidade {
 			}
 		}
 		
-		
-		
-		
 	}
 
-	//public abstract void avancarNoPlano();
-
-	//public abstract void retrocederNoPlano();
-
-	
 }
