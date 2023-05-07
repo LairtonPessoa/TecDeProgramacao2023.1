@@ -24,7 +24,7 @@ public class BibliotecaTecProg {
 		listaPublicacoes = new ArrayList<Publicacoes>();
 	}
 	
-	public void addImprestimoToBiblioteca(Emprestimo emprestimo) {
+	public void addEmprestimoToBiblioteca(Emprestimo emprestimo) {
 		this.listaEmprestimo.add(emprestimo);
 		
 		if(!listaCliente.contains(emprestimo.cliente)) 

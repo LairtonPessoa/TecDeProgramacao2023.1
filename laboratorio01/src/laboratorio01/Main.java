@@ -49,22 +49,22 @@ public class Main {
 		Emprestimo e15= new Emprestimo(servidor2, revista1);
 		Emprestimo e16= new Emprestimo(servidor2, revista2);
 		
-		Bib.addImprestimoToBiblioteca(e1);
-		Bib.addImprestimoToBiblioteca(e2);
-		Bib.addImprestimoToBiblioteca(e3);
-		Bib.addImprestimoToBiblioteca(e4);
-		Bib.addImprestimoToBiblioteca(e5);
-		Bib.addImprestimoToBiblioteca(e6);
-		Bib.addImprestimoToBiblioteca(e7);
-		Bib.addImprestimoToBiblioteca(e8);
-		Bib.addImprestimoToBiblioteca(e9);
-		Bib.addImprestimoToBiblioteca(e10);
-		Bib.addImprestimoToBiblioteca(e11);
-		Bib.addImprestimoToBiblioteca(e12);
-		Bib.addImprestimoToBiblioteca(e13);
-		Bib.addImprestimoToBiblioteca(e14);
-		Bib.addImprestimoToBiblioteca(e15);
-		Bib.addImprestimoToBiblioteca(e16);
+		Bib.addEmprestimoToBiblioteca(e1);
+		Bib.addEmprestimoToBiblioteca(e2);
+		Bib.addEmprestimoToBiblioteca(e3);
+		Bib.addEmprestimoToBiblioteca(e4);
+		Bib.addEmprestimoToBiblioteca(e5);
+		Bib.addEmprestimoToBiblioteca(e6);
+		Bib.addEmprestimoToBiblioteca(e7);
+		Bib.addEmprestimoToBiblioteca(e8);
+		Bib.addEmprestimoToBiblioteca(e9);
+		Bib.addEmprestimoToBiblioteca(e10);
+		Bib.addEmprestimoToBiblioteca(e11);
+		Bib.addEmprestimoToBiblioteca(e12);
+		Bib.addEmprestimoToBiblioteca(e13);
+		Bib.addEmprestimoToBiblioteca(e14);
+		Bib.addEmprestimoToBiblioteca(e15);
+		Bib.addEmprestimoToBiblioteca(e16);
 		
 		System.out.println(Bib.relatorioDeEmprestimos());
 		System.out.println();
