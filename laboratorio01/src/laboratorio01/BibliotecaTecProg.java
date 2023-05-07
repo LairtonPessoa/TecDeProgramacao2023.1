@@ -2,15 +2,8 @@ package laboratorio01;
 
 import java.util.ArrayList;
 
-import cliente.Aluno;
-import cliente.Cliente;
-import cliente.Professor;
-import cliente.Servidor;
-import publicacoes.Artigo;
-import publicacoes.Livros;
-import publicacoes.Publicacoes;
-import publicacoes.Revistas;
-import publicacoes.TCC;
+import cliente.*;
+import publicacoes.*;
 
 public class BibliotecaTecProg {
 
@@ -25,14 +18,15 @@ public class BibliotecaTecProg {
 	}
 	
 	public void addEmprestimoToBiblioteca(Emprestimo emprestimo) {
-		this.listaEmprestimo.add(emprestimo);
-		
-		if(!listaCliente.contains(emprestimo.cliente)) 
-			listaCliente.add(emprestimo.cliente);
-		
-		if(!listaPublicacoes.contains(emprestimo.publicacao))
-			listaPublicacoes.add(emprestimo.publicacao);
-		
+		if(emprestimo.cliente!=null && emprestimo.publicacao!=null) {
+			this.listaEmprestimo.add(emprestimo);
+			
+			if(!listaCliente.contains(emprestimo.cliente)) 
+				listaCliente.add(emprestimo.cliente);
+			
+			if(!listaPublicacoes.contains(emprestimo.publicacao))
+				listaPublicacoes.add(emprestimo.publicacao);
+		}
 	}
 	
 	public String relatorioDeEmprestimos() {
@@ -152,4 +146,49 @@ public class BibliotecaTecProg {
 		return relatorioDeClientes;
 	}
 	
+	public String relatorioDePublicacoes() {
+		String relatorioDePublicacoes = "Relatorio de Publicacoes:\nLivros:\n";
+		for (Publicacoes publicacao : listaPublicacoes) {
+			if(publicacao instanceof Livros) {
+				relatorioDePublicacoes+=publicacao.getTitulo() + ", " + publicacao.getAnoDePublicacao() + ", " + publicacao.getAutor() + ", " + publicacao.getQuantidadeDisponivel() + "\n";
+			}
+		}
+		relatorioDePublicacoes+="\nArtigos:\n";
+		for (Publicacoes publicacao : listaPublicacoes) {
+			if(publicacao instanceof Artigo) {
+				relatorioDePublicacoes+=publicacao.getTitulo() + ", " + publicacao.getAnoDePublicacao() + ", " + publicacao.getAutor() + ", " + publicacao.getQuantidadeDisponivel() + "\n";
+			}
+		}
+		relatorioDePublicacoes+="\nRevistas:\n";
+		for (Publicacoes publicacao : listaPublicacoes) {
+			if(publicacao instanceof Revistas) {
+				relatorioDePublicacoes+=publicacao.getTitulo() + ", " + publicacao.getAnoDePublicacao() + ", " + publicacao.getAutor() + ", " + publicacao.getQuantidadeDisponivel() + "\n";
+			}
+		}
+		relatorioDePublicacoes+="\nTCC:\n";
+		for (Publicacoes publicacao : listaPublicacoes) {
+			if(publicacao instanceof TCC) {
+				relatorioDePublicacoes+=publicacao.getTitulo() + ", " + publicacao.getAnoDePublicacao() + ", " + publicacao.getAutor() + ", " + publicacao.getQuantidadeDisponivel() + "\n";
+			}
+		}
+		
+		return relatorioDePublicacoes;
+	}
+	
+	public String consultarEmprestimosPelaMatricula(int matricula) {
+		String relatorioDaMatricula = "A matricula: " + matricula + " pertence ao cliente: ";
+		for (Cliente cliente : listaCliente) {
+			if(cliente.getMatricula()==matricula) {
+				relatorioDaMatricula+=cliente.getNome();
+			}
+		}
+		relatorioDaMatricula+="\nOs Titulos emprestados a ele foram:\n";
+		for (Emprestimo emprestimo : listaEmprestimo) {
+			if(emprestimo.cliente!=null && emprestimo.cliente.getMatricula()==matricula) {
+				relatorioDaMatricula+=emprestimo.publicacao.getTitulo() + "\n";
+			}
+		}
+		
+		return relatorioDaMatricula;
+	}
 }

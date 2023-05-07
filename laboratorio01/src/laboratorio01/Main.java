@@ -30,6 +30,9 @@ public class Main {
 		Emprestimo e1 = new Emprestimo(aluno1, livro1);
 		Emprestimo e2 = new Emprestimo(aluno1, livro2);
 		Emprestimo e3 = new Emprestimo(aluno1, artigo1);
+		Emprestimo e17 = new Emprestimo(aluno1, artigo2);
+		Emprestimo e18 = new Emprestimo(aluno1, revista1);
+		Emprestimo e19 = new Emprestimo(aluno1, revista2);
 		
 		Emprestimo e4= new Emprestimo(aluno2, livro1);
 		Emprestimo e5= new Emprestimo(aluno2, livro2);
@@ -65,10 +68,18 @@ public class Main {
 		Bib.addEmprestimoToBiblioteca(e14);
 		Bib.addEmprestimoToBiblioteca(e15);
 		Bib.addEmprestimoToBiblioteca(e16);
+		Bib.addEmprestimoToBiblioteca(e17);
+		Bib.addEmprestimoToBiblioteca(e18);
+		Bib.addEmprestimoToBiblioteca(e19);
 		
 		System.out.println(Bib.relatorioDeEmprestimos());
-		System.out.println();
+		System.out.println("\n");
 		System.out.println(Bib.relatorioDeClientes());
+		System.out.println(e1.getDadosEmprestimo());
+		System.out.println("\n");
+		System.out.println(Bib.relatorioDePublicacoes());
+		System.out.println();
+		System.out.println(Bib.consultarEmprestimosPelaMatricula(539179));
 
 	}
 
