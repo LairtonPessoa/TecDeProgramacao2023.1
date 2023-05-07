@@ -1,54 +1,60 @@
 package questao_17;
 
+import java.util.Scanner;
 public class JogoDaVelha {
 
-	private String plano[][];
-	private String jogador1;
-	private String jogador2;
+	protected Plano plano;
 	
-	public JogoDaVelha(String jogador1, String jogador2) {
-		plano = new String[3][3];
-		this.jogador1=jogador1;
-		this.jogador2=jogador2;
-	}
-	
-	public void jogar(int posicaoX, int posicaoY, String simbolo) {
-		plano[posicaoX][posicaoY]=simbolo;
-	}
-	
-	
-	public void exibirPlano() {
-		System.out.println("   x0\t   x1\t   x2");
-		
-		System.out.println("\t|\t|");
-		if(plano[0][0]==null)
-			System.out.print("   n");
-		if(plano[0][1]==null)
-			System.out.print("\t|   n  ");
-		if(plano[0][2]==null)
-			System.out.println("\t|   n     y0");
-		System.out.println("\t|\t|");
-		
-		System.out.println("------------------------");
-		System.out.println("\t|\t|");
-		if(plano[1][0]==null)
-			System.out.print("   n");
-		if(plano[1][1]==null)
-			System.out.print("\t|   n  ");
-		if(plano[1][2]==null)
-			System.out.println("\t|   n     y1");
-		System.out.println("\t|\t|");
-		
-		System.out.println("------------------------");
-		System.out.println("\t|\t|");
-		if(plano[2][0]==null)
-			System.out.print("   n");
-		if(plano[2][1]==null)
-			System.out.print("\t|   n  ");
-		if(plano[2][2]==null)
-			System.out.println("\t|   n     y2");
-		System.out.println("\t|\t|");
+	public JogoDaVelha() {
+		plano = new Plano();
 		
 	}
+	
+	public void iniciarJogo() {
+		Scanner scanner = new Scanner(System.in);
+		int opcaoX, opcaoY;
+		boolean controle;
+		int jogadas=0;
+		
+		
+		do {
+			plano.exibirPlano();
+			
+			do {
+			System.out.println("Jogador 1 quer jogar em qual posicao de x ? \tObs:Digitar somente o numero e uma opcao valida");
+			opcaoX=scanner.nextInt();
+			System.out.println("Jogador 1 quer jogar em qual posicao de y ? \tObs:Digitar somente o numero e uma opcao valida");
+			opcaoY=scanner.nextInt();
+			
+			controle=this.plano.jogar(opcaoX, opcaoY, this.plano.getSimbolo1());
+			
+			}while((opcaoX<0||opcaoX>2)||(opcaoY<0||opcaoY>2)||controle==false);
+			jogadas++;
+			
+			
+			plano.exibirPlano();
+			if(plano.verificarGanhador()!=null) {
+				System.out.println(plano.verificarGanhador());
+			}else if(plano.verificarGanhador()==null||jogadas<=9){
+				do {
+					System.out.println("Jogador 2 quer jogar em qual posicao de x ? \tObs:Digitar somente o numero e uma opcao valida");
+					opcaoX=scanner.nextInt();
+					System.out.println("Jogador 2 quer jogar em qual posicao de y ? \tObs:Digitar somente o numero e uma opcao valida");
+					opcaoY=scanner.nextInt();
+					
+					controle=this.plano.jogar(opcaoX, opcaoY, this.plano.getSimbolo2());
+					
+				}while((opcaoX<0||opcaoX>2)||(opcaoY<0||opcaoY>2)||controle==false);
+				
+				jogadas++;
+				plano.exibirPlano();
+				if(plano.verificarGanhador()!=null) 
+					System.out.println(plano.verificarGanhador());
+			}
+			
+		}while(plano.verificarGanhador()==null||jogadas<=9);
+		
+	}
+	
 	
 }

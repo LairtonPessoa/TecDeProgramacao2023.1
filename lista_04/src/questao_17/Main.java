@@ -1,4 +1,7 @@
+
 package questao_17;
+
+
 
 public class Main {
 
@@ -16,10 +19,11 @@ public class Main {
 		f. Forneça um método para jogar o jogo; todo movimento deve ocorrer em
 		uma casa vazia; depois de cada movimento, determine se houve uma derrota ou um
 		empate.*/
-		JogoDaVelha jogoDaVelha = new JogoDaVelha("Lairton", "Eduardo"
-				+ "");
+	
+		JogoDaVelha jogoDaVelha = new JogoDaVelha();
 		
-		jogoDaVelha.exibirPlano();
+		jogoDaVelha.iniciarJogo();
+		
 	}
-
+	
 }
