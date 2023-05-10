@@ -19,7 +19,7 @@ public class JogoDaVelha {
 		
 		
 		do {
-			plano.exibirPlano();
+			System.out.println(plano.exibirPlano());
 			
 			try {
 				do {
@@ -41,7 +41,7 @@ public class JogoDaVelha {
 			}
 			
 			
-			plano.exibirPlano();
+			System.out.println(plano.exibirPlano());
 			if(plano.verificarGanhador()!=null) {
 				System.out.println(plano.verificarGanhador());
 			}else if(plano.verificarGanhador()==null&&jogadas<9){
@@ -53,7 +53,7 @@ public class JogoDaVelha {
 						opcaoY=scanner.nextInt();
 						
 						controle=plano.jogar(opcaoX, opcaoY, this.plano.getSimbolo2());
-						plano.exibirPlano();
+						System.out.println(plano.exibirPlano());
 						jogadas++;
 					}while(!controle);
 				}catch(ArrayIndexOutOfBoundsException e) {
@@ -69,7 +69,9 @@ public class JogoDaVelha {
 			}
 			
 		}while(plano.verificarGanhador()==null&&jogadas<9);
-		System.out.println("Deu Velha!");
+		
+		if(plano.verificarGanhador()==null&&jogadas==9)	
+			System.out.println("Deu Velha!");
 	
 	}
 	

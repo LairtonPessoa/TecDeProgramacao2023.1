@@ -107,56 +107,56 @@ public class Plano {
 			
 	}
 	
-	public void exibirPlano() {
-		System.out.println("   y0\t   y1\t   y2");
-		
-		System.out.println("\t|\t|");
+	public String exibirPlano() {
+		String aux="   y0\t   y1\t   y2\n";
+		aux+="\t|\t|\n";
 		if(plano[0][0]!=null)
-			System.out.print("   "+plano[0][0]);
+			aux+="   "+plano[0][0];
 		else
-			System.out.print("    ");
+			aux+="    ";
 		if(plano[0][1]!=null)
-			System.out.print("\t|   " + plano[0][1]+ "  ");
+			aux+="\t|   " + plano[0][1]+ "  ";
 		else
-			System.out.print("\t|      ");
+			aux+="\t|      ";
 		if(plano[0][2]!=null)
-			System.out.println("\t|   " + plano[0][2] + "     x0");
+			aux+="\t|   " + plano[0][2] + "     x0\n";
 		else
-			System.out.println("\t|         x0");
-		System.out.println("\t|\t|");
+			aux+="\t|         x0\n";
+		aux+="\t|\t|\n";
 		
-		System.out.println("------------------------");
-		System.out.println("\t|\t|");
+		aux+="------------------------\n";
+		aux+="\t|\t|\n";
 		if(plano[1][0]!=null)
-			System.out.print("   "+plano[1][0]);
+			aux+="   "+plano[1][0];
 		else
-			System.out.print("    ");
+			aux+="    ";
 		if(plano[1][1]!=null)
-			System.out.print("\t|   " + plano[1][1]+ "  ");
+			aux+="\t|   " + plano[1][1]+ "  ";
 		else
-			System.out.print("\t|      ");
+			aux+="\t|      ";
 		if(plano[1][2]!=null)
-			System.out.println("\t|   " + plano[1][2] + "     x1");
+			aux+="\t|   " + plano[1][2] + "     x1\n";
 		else
-			System.out.println("\t|         x1");
-		System.out.println("\t|\t|");
+			aux+="\t|         x1\n";
+		aux+="\t|\t|\n";
 		
-		System.out.println("------------------------");
-		System.out.println("\t|\t|");
+		aux+="------------------------\n";
+		aux+="\t|\t|\n";
 		if(plano[2][0]!=null)
-			System.out.print("   "+plano[2][0]);
+			aux+="   "+plano[2][0];
 		else
-			System.out.print("    ");
+			aux+="    ";
 		if(plano[2][1]!=null)
-			System.out.print("\t|   " + plano[2][1]+ "  ");
+			aux+="\t|   " + plano[2][1]+ "  ";
 		else
-			System.out.print("\t|      ");
+			aux+="\t|      ";
 		if(plano[2][2]!=null)
-			System.out.println("\t|   " + plano[2][2] + "     x2");
+			aux+="\t|   " + plano[2][2] + "     x2\n";
 		else
-			System.out.println("\t|         x2");
-		System.out.println("\t|\t|");
+			aux+="\t|         x2\n";
+		aux+="\t|\t|\n";
 		
+		return aux;
 	}
 
 	public String getSimbolo1() {
