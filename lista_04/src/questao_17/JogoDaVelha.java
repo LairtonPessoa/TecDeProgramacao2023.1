@@ -46,14 +46,16 @@ public class JogoDaVelha {
 				System.out.println(plano.verificarGanhador());
 			}else if(plano.verificarGanhador()==null&&jogadas<9){
 				try {
-					System.out.println("Jogador 2 quer jogar em qual posicao de x ? \tObs:Digitar somente o numero e uma opcao valida");
-					opcaoX=scanner.nextInt();
-					System.out.println("Jogador 2 quer jogar em qual posicao de y ? \tObs:Digitar somente o numero e uma opcao valida");
-					opcaoY=scanner.nextInt();
-					
-					plano.jogar(opcaoX, opcaoY, this.plano.getSimbolo2());
-					plano.exibirPlano();
-					jogadas++;
+					do {
+						System.out.println("Jogador 2 quer jogar em qual posicao de x ? \tObs:Digitar somente o numero e uma opcao valida");
+						opcaoX=scanner.nextInt();
+						System.out.println("Jogador 2 quer jogar em qual posicao de y ? \tObs:Digitar somente o numero e uma opcao valida");
+						opcaoY=scanner.nextInt();
+						
+						controle=plano.jogar(opcaoX, opcaoY, this.plano.getSimbolo2());
+						plano.exibirPlano();
+						jogadas++;
+					}while(!controle);
 				}catch(ArrayIndexOutOfBoundsException e) {
 					System.out.println("POSICAO INVALIDA!!!\nPunicao: Perdeu a vez");
 				}catch(InputMismatchException e) {
@@ -67,9 +69,8 @@ public class JogoDaVelha {
 			}
 			
 		}while(plano.verificarGanhador()==null&&jogadas<9);
-		if(jogadas==9) {
-			System.out.println("Deu Velha!");
-		}
+		System.out.println("Deu Velha!");
+	
 	}
 	
 	
