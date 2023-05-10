@@ -18,7 +18,7 @@ public class Servidor extends Cliente{
 		return -15;
 	}
 
-	public float darDesconto() {
+	public int temDesconto() {
 		return 0;
 	}
 

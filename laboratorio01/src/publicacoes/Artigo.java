@@ -7,4 +7,9 @@ public class Artigo extends Publicacoes{
 		this.tipo="Artigo";
 	}
 
+	
+	public float porcentagemDeDesconto() {
+		return (float) 0.5;
+	}
+
 }

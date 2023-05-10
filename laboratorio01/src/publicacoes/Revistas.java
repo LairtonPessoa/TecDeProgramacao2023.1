@@ -7,4 +7,9 @@ public class Revistas extends Publicacoes{
 		this.tipo="Revista";
 	}
 
+
+	public float porcentagemDeDesconto() {
+		return (float) 0.01;
+	}
+
 }

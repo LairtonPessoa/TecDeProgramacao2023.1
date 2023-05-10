@@ -1,8 +1,6 @@
 package cliente;
 
-
-
-public abstract class Cliente implements ValidarEmprestimo, GastarTP, Desconto{
+public abstract class Cliente implements ValidarEmprestimo{
 
 	protected int matricula;
 	protected String nome;

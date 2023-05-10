@@ -7,7 +7,7 @@ import publicacoes.*;
 
 public class BibliotecaTecProg {
 
-	public ArrayList<Emprestimo>listaEmprestimo;
+	public ArrayList<Emprestimo> listaEmprestimo;
 	public ArrayList<Publicacoes> listaPublicacoes;
 	public ArrayList<Cliente> listaCliente;
 
@@ -184,7 +184,7 @@ public class BibliotecaTecProg {
 		}
 		relatorioDaMatricula+="\nOs Titulos emprestados a ele foram:\n";
 		for (Emprestimo emprestimo : listaEmprestimo) {
-			if(emprestimo.cliente!=null && emprestimo.cliente.getMatricula()==matricula) {
+			if(emprestimo.cliente.getMatricula()==matricula) {
 				relatorioDaMatricula+=emprestimo.publicacao.getTitulo() + "\n";
 			}
 		}

@@ -1,6 +1,6 @@
 package publicacoes;
 
-public abstract class Publicacoes {
+public abstract class Publicacoes implements Descontos{
 
 	protected String titulo;
 	protected int anoDePublicacao;

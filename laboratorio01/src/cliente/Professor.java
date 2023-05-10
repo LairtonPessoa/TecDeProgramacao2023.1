@@ -18,9 +18,9 @@ public class Professor extends Cliente{
 		return -25;
 	}
 
-	public float darDesconto() {
+	public int temDesconto() {
 		return 0;
 	}
-	
+
 
 }

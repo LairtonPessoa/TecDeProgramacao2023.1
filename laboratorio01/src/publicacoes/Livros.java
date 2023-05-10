@@ -7,4 +7,8 @@ public class Livros extends Publicacoes{
 		this.tipo="Livro";
 	}
 
+	public float porcentagemDeDesconto() {
+		return (float) 0.1;
+	}
+
 }

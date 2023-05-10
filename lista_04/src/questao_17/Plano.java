@@ -1,5 +1,6 @@
 package questao_17;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Plano {
@@ -21,10 +22,17 @@ public class Plano {
 		jogadores.nomeJogador2=scanner.nextLine();
 		
 		do {
-			System.out.print("Se o primeiro jogador quiser ser X digite 1 se quiser ser O digite 2: ");
-			opcao = scanner.nextInt();
-			 
+			try {
+				System.out.print("Se o primeiro jogador quiser ser X digite 1 se quiser ser O digite 2: ");
+				opcao = scanner.nextInt();
+				
+			}catch(InputMismatchException e) {
+				System.out.println("Erro");
+				scanner.nextLine();
+			}
+			
 		}while(opcao!=1&&opcao!=2);
+		
 		if(opcao==1) {
 			this.simbolo1="X";
 			this.simbolo2="O";
@@ -32,6 +40,7 @@ public class Plano {
 			this.simbolo1="O";
 			this.simbolo2="X";
 		}
+		
 	}
 	
 	public String verificarGanhador() {
@@ -62,7 +71,7 @@ public class Plano {
 				else
 					return this.jogadores.nomeJogador2 + " foi o ganhador!";
 			}
-			if((plano[0][1]==plano[1][1]&&plano[1][0]==plano[2][1])&&plano[0][1]!=null){
+			if((plano[0][1]==plano[1][1]&&plano[1][1]==plano[2][1])&&plano[0][1]!=null){
 				if(plano[0][1]==simbolo1)
 					return this.jogadores.nomeJogador1 + " foi o ganhador!";
 				else
@@ -161,8 +170,5 @@ public class Plano {
 	public Jogadores getJogadores() {
 		return jogadores;
 	}
-	
-	
-	
 	
 }

@@ -7,4 +7,9 @@ public class TCC extends Publicacoes{
 		this.tipo="TCC";
 	}
 
+	
+	public float porcentagemDeDesconto() {
+		return (float) 0;
+	}
+
 }
