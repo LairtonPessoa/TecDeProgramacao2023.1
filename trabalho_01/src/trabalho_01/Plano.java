@@ -23,18 +23,17 @@ public class Plano {
 	}
 	
 	public void exibirPlano() {
-		for (int i = 0; i < listaDeCelulas.size(); i++) {
-			if(listaDeCelulas.get(i).entidade!=null&&listaDeCelulas.get(i).entidade.getClass()==RoboAndador.class) {
-				System.out.print("[A]   ");
-			}if(listaDeCelulas.get(i).entidade!=null&&listaDeCelulas.get(i).entidade.getClass()==Peao.class) {
-				System.out.print("[P]   ");
-			}if(listaDeCelulas.get(i).entidade==null) {
+		for (Celula celula : listaDeCelulas) {
+			if(celula.listaEntidade.size()!=0) {
+				if(celula.listaEntidade.get(celula.listaEntidade.size()-1)!=null) {
+					System.out.print("[" + celula.listaEntidade.get(celula.listaEntidade.size()-1).caractere + "]   ");
+				}
+			}else {
 				System.out.print("[ ]   ");
 			}
-			if(listaDeCelulas.get(i).posicaoYdaCelula%tamanhoY==0) {
+			if(celula.posicaoYdaCelula%tamanhoY==0) {
 				System.out.println("\n");
 			}
-			
 		}
 	}
 }

@@ -7,6 +7,7 @@ public abstract class Entidade {
 	public int posicaoXdaEntidade;
 	public int posicaoYdaEntidade;
 	public Plano plano;
+	public char caractere;
 	
 	public Entidade(int id, String nome, int posicaoX, int posicaoY, Plano plano) {
 		super();
@@ -20,7 +21,7 @@ public abstract class Entidade {
 		for(int i=0;i<plano.listaDeCelulas.size();i++) {
 			aux = plano.listaDeCelulas.get(i);
 			if(aux.posicaoXdaCelula==posicaoX && aux.posicaoYdaCelula==posicaoY) {
-				aux.entidade=this;
+				aux.listaEntidade.add(this);
 			}
 		}
 		
