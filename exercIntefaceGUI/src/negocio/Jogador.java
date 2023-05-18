@@ -37,4 +37,5 @@ public class Jogador {
 	public void addNumero(int numeroApostado) {
 		listaNumeros.add(numeroApostado);
 	}
+	
 }

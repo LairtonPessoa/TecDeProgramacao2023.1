@@ -11,5 +11,6 @@ public class Tela {
 	public String entradaDados(String msg) {
 		String nome = JOptionPane.showInputDialog(msg);
 		return nome;
+		
 	}
 }

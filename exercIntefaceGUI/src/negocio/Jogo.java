@@ -81,6 +81,7 @@ public class Jogo {
 		}
 
 	}
+	
 
 	// public void verificarAcerto() {
 	// do {
