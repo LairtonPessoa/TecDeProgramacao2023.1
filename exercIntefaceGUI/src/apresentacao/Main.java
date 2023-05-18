@@ -9,5 +9,6 @@ public class Main {
 		Jogo jogo= new Jogo();
 //		jogo.inciarJogoTerminal();
 		jogo.inciarJogoGUI();
+		
 	}
 }
