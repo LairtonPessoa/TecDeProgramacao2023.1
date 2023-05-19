@@ -5,9 +5,9 @@ import java.util.ArrayList;
 
 public class Plano {
 
-	public ArrayList<Celula> listaDeCelulas;
-	public int tamanhoX;
-	public int tamanhoY;
+	protected ArrayList<Celula> listaDeCelulas;
+	protected int tamanhoX;
+	protected int tamanhoY;
 	
 	public Plano(int tamanhoX, int tamanhoY) {
 		listaDeCelulas = new ArrayList<Celula>();
@@ -25,8 +25,12 @@ public class Plano {
 	public void exibirPlano() {
 		for (Celula celula : listaDeCelulas) {
 			if(celula.listaEntidade.size()!=0) {
-				if(celula.listaEntidade.get(celula.listaEntidade.size()-1)!=null) {
+				if(celula.listaEntidade.get(celula.listaEntidade.size()-1).visibilidade) {
 					System.out.print("[" + celula.listaEntidade.get(celula.listaEntidade.size()-1).caractere + "]   ");
+				}else if(celula.listaEntidade.get(0).visibilidade){
+					System.out.print("[" + celula.listaEntidade.get(0).caractere + "]   ");
+				}else {
+					System.out.print("[ ]   ");
 				}
 			}else {
 				System.out.print("[ ]   ");

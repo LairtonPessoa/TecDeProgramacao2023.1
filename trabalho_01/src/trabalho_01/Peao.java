@@ -20,16 +20,10 @@ public class Peao extends Entidade{
 						posicaoYdaEntidade=plano.tamanhoY;
 				}
 			}
-			
 		}
+		this.atribuirEntidadeACelula();
+		this.computarPontuacao(getCelulaAtualDaEntidade());
 		
-		for (Celula celula : plano.listaDeCelulas) {//for para verificarmos do inicio de todas as celular
-			if(celula.posicaoXdaCelula==this.posicaoXdaEntidade&&celula.posicaoYdaCelula==this.posicaoYdaEntidade) {//aqui verificamos a celula com a posição x e y tem as mesmas cordenadas do robo e atribuimos o robo na celula correspondente
-				celula.listaEntidade.add(this);
-			}else {//se a minha celula não tiver as mesmas posições do robo e tiver o robo, ira remove-lo
-				celula.listaEntidade.remove(this);
-			}
-		}
 	}
 	
 	public void retrocederNoPlano() {//logica para poder aumentar o indice x da matriz para desloca-lo um determinado numero para baixo
@@ -43,16 +37,18 @@ public class Peao extends Entidade{
 						posicaoYdaEntidade=1;
 				}
 			}
-			
 		}
+		this.atribuirEntidadeACelula();
+		this.computarPontuacao(getCelulaAtualDaEntidade());
 		
-		for (Celula celula : plano.listaDeCelulas) {//for para verificarmos do inicio de todas as celular
-			if(celula.posicaoXdaCelula==this.posicaoXdaEntidade&&celula.posicaoYdaCelula==this.posicaoYdaEntidade) {//aqui verificamos a celula com a posição x e y tem as mesmas cordenadas do robo e atribuimos o robo na celula correspondente
-				celula.listaEntidade.add(this);
-			}else {//se a minha celula não tiver as mesmas posições do robo e tiver o robo, ira remove-lo
-				celula.listaEntidade.remove(this);
-			}
-		}
 	}
+
+	public boolean podeComputarPontuacao() {
+		return false;
+	}
+
+
+	
+	
 
 }

@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Celula {
 
-	public int posicaoXdaCelula;
-	public int posicaoYdaCelula;
-	public ArrayList<Entidade> listaEntidade;
+	protected int posicaoXdaCelula;
+	protected int posicaoYdaCelula;
+	protected ArrayList<Entidade> listaEntidade;
 	
 	public Celula(int posicaoX, int posicaoY) {
 		this.posicaoXdaCelula=posicaoX;

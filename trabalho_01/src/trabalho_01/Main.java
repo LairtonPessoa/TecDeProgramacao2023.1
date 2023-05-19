@@ -5,26 +5,26 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		Plano p = new Plano(5, 5);
+		Plano p = new Plano(9, 9);
 		
-		RoboAndador roboAndador = new RoboAndador(2, "Robo andador", 1, 2, p);
-		Peao peao  = new Peao(4, "Peao", 4, 1, p);
-		p.exibirPlano();
-		System.out.println("\n");
+		RoboAndador roboAndador = new RoboAndador(2, "Robo andador", 9, 5, p);
+		Peao peao  = new Peao(4, "Peao", 5, 1, p);
+		Aluno aluno = new Aluno(13, p);
 		
 		peao.avancarNoPlano();
-		roboAndador.retrocederNoPlano(3);
-		p.exibirPlano();
-		System.out.println("\n");
+		roboAndador.avancarNoPlano(4);
+		peao.avancarNoPlano();
+		peao.avancarNoPlano();
+		peao.avancarNoPlano();
+		peao.avancarNoPlano();
 		
-		peao.retrocederNoPlano();
-		roboAndador.avancarNoPlano(7);
+		
+		
 		p.exibirPlano();
-		System.out.println("\n");
-				
-		peao.retrocederNoPlano();
-		roboAndador.retrocederNoPlano(10);
-		p.exibirPlano();
+		System.out.println();
+		
+		System.out.println(roboAndador.exibirPontuacao());
+		System.out.println(peao.exibirPontuacao());
 		
 	}
 
