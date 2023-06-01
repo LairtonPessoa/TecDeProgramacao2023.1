@@ -1,13 +1,14 @@
 package trabalho_01;
 
 import java.util.Random;
-public class Aluno extends Entidades{
 
-	public Aluno(int id, Plano plano) {
+public class Bug extends Entidades{
+
+	public Bug(int id, Plano plano) {
 		super(id, plano);
-		nome = "Aluno";
-		pontuacao = 10;
-		caractere = '@';
+		nome = "Bug";
+		pontuacao = -15;
+		caractere = '#';
 		visibilidade = false;
 		
 		Random random = new Random();
@@ -26,13 +27,14 @@ public class Aluno extends Entidades{
 		}while(!controle);
 	}
 
+	
 	public boolean foiAchado() {
 		if(visibilidade) {
-			Celula celulaDoAluno = this.getCelulaAtualDaEntidade();
-			celulaDoAluno.listaEntidade.remove(0);
+			Celula celulaDoBug = this.getCelulaAtualDaEntidade();
+			celulaDoBug.listaEntidade.remove(0);
 			this.visibilidade=false;
 			
-			for (Entidades entidade : celulaDoAluno.listaEntidade) {
+			for (Entidades entidade : celulaDoBug.listaEntidade) {
 				if(!entidade.visibilidade)
 					entidade.visibilidade=true;
 				System.out.println(entidade.nome + " achou um " + this.nome);
@@ -43,6 +45,7 @@ public class Aluno extends Entidades{
 		return false;
 	}
 
+	
 	public boolean podeComputarPontuacao() {
 		return true;
 	}

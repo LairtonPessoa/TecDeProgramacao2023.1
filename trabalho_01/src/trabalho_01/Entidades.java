@@ -1,6 +1,6 @@
 package trabalho_01;
 
-public abstract class Entidade implements AcoesDasEntidades{
+public abstract class Entidades  {
 
 	protected int id;
 	protected String nome;
@@ -11,24 +11,10 @@ public abstract class Entidade implements AcoesDasEntidades{
 	protected int pontuacao;
 	protected boolean visibilidade;
 	
-	public Entidade(int id, String nome, int posicaoX, int posicaoY, Plano plano) {
-		this.id = id;
-		this.nome = nome;
-		this.posicaoXdaEntidade = posicaoX;
-		this.posicaoYdaEntidade = posicaoY;
-		this.plano = plano;
-		pontuacao = 0;
-		visibilidade=true;
-		
-		this.atribuirEntidadeACelula();
-	}
 	
-	
-	
-	public Entidade(int id, Plano plano) {
+	public Entidades(int id, Plano plano) {
 		this.id = id;
 		this.plano = plano;
-		
 	}
 
 	public void atribuirEntidadeACelula() {
@@ -41,24 +27,7 @@ public abstract class Entidade implements AcoesDasEntidades{
 		}
 	}
 	
-	public String exibirPontuacao() {
-		return this.nome + " tem " + pontuacao + " pontos";
-	}
-	
-	public boolean computarPontuacao(Celula celula) {
-		for (Entidade entidade : celula.listaEntidade) {
-			if(entidade.podeComputarPontuacao()) {
-				this.pontuacao+=entidade.pontuacao;	
-				this.visibilidade=!this.visibilidade;
-				
-				if(!entidade.visibilidade)
-					entidade.visibilidade=!entidade.visibilidade;
-				return true;
-			}
-		}
-		return false;
-	}
-	
+
 	public Celula getCelulaAtualDaEntidade() {
 		for (Celula celula : plano.listaDeCelulas) {
 			if(celula.posicaoXdaCelula==posicaoXdaEntidade&&celula.posicaoYdaCelula==posicaoYdaEntidade) {
@@ -67,6 +36,7 @@ public abstract class Entidade implements AcoesDasEntidades{
 		}
 		return null;
 	}
-	
 
+	protected abstract boolean podeComputarPontuacao();
+	
 }
