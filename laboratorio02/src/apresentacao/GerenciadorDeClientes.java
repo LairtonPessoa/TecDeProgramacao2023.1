@@ -2,9 +2,11 @@ package apresentacao;
 
 
 import java.awt.BorderLayout;
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.GridBagLayout;
 import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,43 +16,28 @@ import javax.swing.*;
 public class GerenciadorDeClientes extends JFrame{
 
 	
-	private JPanel painelSuperior, painelInferior;
-	private JanelaDeCadastro janelaDeCadastro;
-	private JanelaDeAtualizacao janelaDeAtualizacao;
-	private JanelaDeListagem janelaDeListagem;
-	private JanelaDeExclusao janelaDeExclusao;
+	private JPanel painelSuperior;
+	private PainelInferior painelInferior;
+	
 	
 	public GerenciadorDeClientes() {
 		
 		setSize(500, 500);
 		setTitle("Gerenciador de Clientes");
 		criarPainelSuperior();
-		painelInferior = new JPanel();
+		
+		
+		painelInferior = new PainelInferior();
 		painelInferior.setPreferredSize(new Dimension(this.getWidth(), 400));;
-		
-		janelaDeCadastro = new JanelaDeCadastro();
-		janelaDeListagem = new JanelaDeListagem();
-		janelaDeAtualizacao = new JanelaDeAtualizacao();
-		janelaDeExclusao = new JanelaDeExclusao();
-		
-		janelaDeCadastro.setPreferredSize(new Dimension(painelInferior.getWidth(), painelInferior.getHeight()));
-		janelaDeListagem.setPreferredSize(new Dimension(painelInferior.getWidth(), painelInferior.getHeight()));
-		janelaDeAtualizacao.setPreferredSize(new Dimension(painelInferior.getWidth(), painelInferior.getHeight()));
-		janelaDeExclusao.setPreferredSize(new Dimension(painelInferior.getWidth(), painelInferior.getHeight()));
-		
-		painelInferior.add(janelaDeCadastro, BorderLayout.CENTER);
-		painelInferior.add(janelaDeListagem);
-		painelInferior.add(janelaDeAtualizacao);
-		painelInferior.add(janelaDeExclusao);
 		painelInferior.setVisible(true);
 		painelInferior.setBackground(new Color(50, 50, 50));
 		
-		
+		setLayout(new BorderLayout());
 		this.add(painelSuperior, BorderLayout.NORTH);
-		this.add(janelaDeCadastro, BorderLayout.CENTER);
-		this.add(janelaDeCadastro, BorderLayout.CENTER);
-		this.add(janelaDeCadastro, BorderLayout.CENTER);
-		this.add(janelaDeCadastro, BorderLayout.CENTER);
+		this.add(painelInferior, BorderLayout.CENTER);
+//		this.add(janelaDeListagem, BorderLayout.CENTER);
+//		this.add(janelaDeAtualizacao, BorderLayout.CENTER);
+//		this.add(janelaDeExclusao, BorderLayout.CENTER);
 		
 		
 		setVisible(true);
@@ -104,37 +91,25 @@ public class GerenciadorDeClientes extends JFrame{
 	
 	private class ShowJanelaDeCadastro implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
-			janelaDeCadastro.setVisible(true);
-			janelaDeAtualizacao.setVisible(false);
-			janelaDeExclusao.setVisible(false);
-			janelaDeListagem.setVisible(false);
+			painelInferior.setShowJanelaDeCadastro();
 		}
 	}
 	
 	private class ShowJanelaDeListagem implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
-			janelaDeCadastro.setVisible(false);
-			janelaDeAtualizacao.setVisible(false);
-			janelaDeExclusao.setVisible(false);
-			janelaDeListagem.setVisible(true);
+			painelInferior.setShowJanelaDeListagem();
 		}
 	}
 	
 	private class ShowJanelaDeAtualizacao implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
-			janelaDeCadastro.setVisible(false);
-			janelaDeAtualizacao.setVisible(true);
-			janelaDeExclusao.setVisible(false);
-			janelaDeListagem.setVisible(false);
+			painelInferior.setShowJanelaDeAtualizacao();
 		}
 	}
 	
 	private class ShowJanelaDeExclusao implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
-			janelaDeCadastro.setVisible(false);
-			janelaDeAtualizacao.setVisible(false);
-			janelaDeExclusao.setVisible(true);
-			janelaDeListagem.setVisible(false);
+			painelInferior.setShowJanelaDeExclusao();
 		}
 	}
 }

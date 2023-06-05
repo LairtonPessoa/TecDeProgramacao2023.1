@@ -23,24 +23,24 @@ public class JanelaDeCadastro extends JPanel implements ActionListener{
 		areasDeDigitacao = new ArrayList<AreaDeDigitacao>();
 		setLayout(new GridLayout());
 		
-		AreaDeDigitacao nameArea = new AreaDeDigitacao("Nome:");
+		AreaDeDigitacao nameArea = new AreaDeDigitacao(" Nome:");
 		nameArea.setMaximumSize(new Dimension(this.getWidth(), 30));
 		areasDeDigitacao.add(nameArea);
 		
-		AreaDeDigitacao cpfArea = new AreaDeDigitacao("CPF:");
+		AreaDeDigitacao cpfArea = new AreaDeDigitacao(" CPF:");
 		cpfArea.setMaximumSize(new Dimension(this.getWidth(), 30));
 		areasDeDigitacao.add(cpfArea);
 		
-		AreaDeDigitacao matriculaArea = new AreaDeDigitacao("Matrícula:");
+		AreaDeDigitacao matriculaArea = new AreaDeDigitacao(" Matrícula:");
 		matriculaArea.setMaximumSize(new Dimension(this.getWidth(), 30));
 		areasDeDigitacao.add(matriculaArea);
 
 
-		AreaDeDigitacao vertenteArea = new AreaDeDigitacao("Vertente:");
+		AreaDeDigitacao vertenteArea = new AreaDeDigitacao(" Vertente:");
 		vertenteArea.setMaximumSize(new Dimension(this.getWidth(), 30));
 		areasDeDigitacao.add(vertenteArea);
 		
-		botaoDeCadastro = new JButton("Cadastrar");
+		botaoDeCadastro = new JButton(" Cadastrar");
 		botaoDeCadastro.addActionListener(this);
 		
 //		for (AreaDeDigitacao areaDeDigitacao : areasDeDigitacao) {
