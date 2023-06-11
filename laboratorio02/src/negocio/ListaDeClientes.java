@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ListaDeClientes {
 
-	private ArrayList<Cliente> listaClientes;
+	public ArrayList<Cliente> listaClientes;
 
 	public ListaDeClientes() {
 		listaClientes = new ArrayList<Cliente>();
@@ -26,8 +26,8 @@ public class ListaDeClientes {
 		String relatorio = "";
 		
 		for (Cliente cliente : listaClientes) {
-			relatorio += "Nome: " + cliente.getName() + ";CPF: " + cliente.getCpf() + 
-					";Matricula: " + cliente.getMatricula() + ";Vertente: " + cliente.getVertente() +"\n";
+			relatorio +=cliente.getName() + " -SEPARAR DADOS- " + cliente.getCpf() + 
+					" -SEPARAR DADOS- " + cliente.getMatricula() + " -SEPARAR DADOS- " + cliente.getVertente() +"\n";
 		}
 		
 		return relatorio;

@@ -1,5 +1,6 @@
 package apresentacao;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -7,61 +8,79 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import negocio.Cliente;
+import negocio.ListaDeClientes;
 import persistencia.Writer;
 
 public class JanelaDeCadastro extends JPanel implements ActionListener{
 
 	private JButton botaoDeCadastro;
 	private Writer writer;
-	private ArrayList<AreaDeDigitacao> areasDeDigitacao;
+	private AreaDeDigitacao nameArea;
+	private AreaDeDigitacao cpfArea;
+	private AreaDeDigitacao matriculaArea;
+	private AreaDeDigitacao vertenteArea;
+	private ListaDeClientes listaClientes;
+	
 	
 	
 	public JanelaDeCadastro() {
 		writer = new Writer();
-		areasDeDigitacao = new ArrayList<AreaDeDigitacao>();
-		setLayout(new GridLayout());
-		
-		AreaDeDigitacao nameArea = new AreaDeDigitacao(" Nome:");
+		listaClientes = new ListaDeClientes();
+		nameArea = new AreaDeDigitacao("   Nome:");
 		nameArea.setMaximumSize(new Dimension(this.getWidth(), 30));
-		areasDeDigitacao.add(nameArea);
 		
-		AreaDeDigitacao cpfArea = new AreaDeDigitacao(" CPF:");
+		
+		cpfArea = new AreaDeDigitacao("   CPF:");
 		cpfArea.setMaximumSize(new Dimension(this.getWidth(), 30));
-		areasDeDigitacao.add(cpfArea);
 		
-		AreaDeDigitacao matriculaArea = new AreaDeDigitacao(" Matrícula:");
+		
+		matriculaArea = new AreaDeDigitacao("   Matrícula:");
 		matriculaArea.setMaximumSize(new Dimension(this.getWidth(), 30));
-		areasDeDigitacao.add(matriculaArea);
-
-
-		AreaDeDigitacao vertenteArea = new AreaDeDigitacao(" Vertente:");
-		vertenteArea.setMaximumSize(new Dimension(this.getWidth(), 30));
-		areasDeDigitacao.add(vertenteArea);
 		
-		botaoDeCadastro = new JButton(" Cadastrar");
+		
+		vertenteArea = new AreaDeDigitacao("   Vertente:");
+		vertenteArea.setMaximumSize(new Dimension(this.getWidth(), 30));
+		
+		
+		JPanel painelAux = new JPanel();
+		botaoDeCadastro = new JButton("   Cadastrar");
+		botaoDeCadastro.setBackground(new Color(150,191,255));
 		botaoDeCadastro.addActionListener(this);
 		
-//		for (AreaDeDigitacao areaDeDigitacao : areasDeDigitacao) {
-//			areaDeDigitacao.setPreferredSize(new Dimension(200, 30));
-//		}
+		painelAux.setLayout(new GridLayout(1,2,0,55));
+		painelAux.setBackground(new Color(173, 216, 230));
+		painelAux.add(new JLabel());
+		painelAux.add(botaoDeCadastro);
 		
 		
-		setLayout(new GridLayout(5,1));
+		setLayout(new GridLayout(5, 1, 0, 55));
+		setBackground(new Color(173, 216, 230));
+		
 		this.add(nameArea);
 		this.add(cpfArea);
 		this.add(matriculaArea);
 		this.add(vertenteArea);
-		this.add(botaoDeCadastro);
+		this.add(painelAux);
+		
 		setVisible(false);
 		
 	}
 
 	
 	public void actionPerformed(ActionEvent e) {
-		for (AreaDeDigitacao areaDeDigitacao : areasDeDigitacao) {
-			writer.writeData("arquivos/DadosDosClientes", areaDeDigitacao.getTextoEscrito());
-		}
+		String textoDigitado="";
+		Cliente cliente = new Cliente(nameArea.getTextoEscrito(), cpfArea.getTextoEscrito(), Integer.parseInt(matriculaArea.getTextoEscrito()), vertenteArea.getTextoEscrito());
+		listaClientes.addClienteToList(cliente);
+		
+		writer.writeData("dados/dadosDosAlunos.txt", listaClientes.relatorioDeClientes(), false);
+		
+		nameArea.removeTextOfTextBox();
+		cpfArea.removeTextOfTextBox();
+		matriculaArea.removeTextOfTextBox();
+		vertenteArea.removeTextOfTextBox();
 	}
 }

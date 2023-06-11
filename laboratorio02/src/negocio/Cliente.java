@@ -3,12 +3,12 @@ package negocio;
 public class Cliente {
 
 	private String name;
-	private int cpf;
+	private String cpf;
 	private int matricula;
 	private String vertente;
 	
 	
-	public Cliente(String name, int cpf, int matricula, String vertente) {
+	public Cliente(String name, String cpf, int matricula, String vertente) {
 		super();
 		this.name = name;
 		this.cpf = cpf;
@@ -32,7 +32,7 @@ public class Cliente {
 	}
 
 
-	public int getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 

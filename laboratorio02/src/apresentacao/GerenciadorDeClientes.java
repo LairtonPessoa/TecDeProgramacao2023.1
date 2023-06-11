@@ -26,28 +26,25 @@ public class GerenciadorDeClientes extends JFrame{
 		setTitle("Gerenciador de Clientes");
 		criarPainelSuperior();
 		
-		
 		painelInferior = new PainelInferior();
 		painelInferior.setPreferredSize(new Dimension(this.getWidth(), 400));;
 		painelInferior.setVisible(true);
-		painelInferior.setBackground(new Color(50, 50, 50));
+		painelInferior.setBackground(new Color(173, 216, 230));
 		
 		setLayout(new BorderLayout());
 		this.add(painelSuperior, BorderLayout.NORTH);
 		this.add(painelInferior, BorderLayout.CENTER);
-//		this.add(janelaDeListagem, BorderLayout.CENTER);
-//		this.add(janelaDeAtualizacao, BorderLayout.CENTER);
-//		this.add(janelaDeExclusao, BorderLayout.CENTER);
 		
 		
 		setVisible(true);
+		setResizable(false);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 	
 	private void criarPainelSuperior() {
 		painelSuperior = new JPanel();
 		painelSuperior.setPreferredSize(new Dimension(this.getWidth(), 100));
-		painelSuperior.setBackground(new Color(20, 200,255));
+		painelSuperior.setBackground(new Color(173, 216, 230));
 		
 		JButton botaoCadastro = gerarBotao("Cadastrar", new Color(150,191,255), 100, 30);
 		botaoCadastro.addActionListener(new ShowJanelaDeCadastro());
@@ -68,19 +65,7 @@ public class GerenciadorDeClientes extends JFrame{
 		painelSuperior.add(botaoDeletar);
 	}
 
-//	public void organizador(LayoutManager organizador) {
-//	
-//		
-//		painelInferior.add(painelCadastro);
-//		painelInferior.add(painelListarDados);
-//		painelInferior.add(painelAtualizarDados);
-//		painelInferior.add(painelLimpar);
-//
-//		this.setLayout(new BorderLayout());
-//		this.add(painelSuperior, BorderLayout.NORTH);
-//		this.add(painelInferior, BorderLayout.CENTER);
-//	}
-	
+
 	public JButton gerarBotao(String text, Color background, int width, int height) {
 		JButton botao = new JButton(text);
 		botao.setBackground(background);
@@ -92,24 +77,33 @@ public class GerenciadorDeClientes extends JFrame{
 	private class ShowJanelaDeCadastro implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 			painelInferior.setShowJanelaDeCadastro();
+			revalidate();
+			repaint();
 		}
 	}
 	
 	private class ShowJanelaDeListagem implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 			painelInferior.setShowJanelaDeListagem();
+			painelInferior.janelaDeListagem.attJanela();
+			revalidate();
+			repaint();
 		}
 	}
 	
 	private class ShowJanelaDeAtualizacao implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 			painelInferior.setShowJanelaDeAtualizacao();
+			revalidate();
+			repaint();
 		}
 	}
 	
 	private class ShowJanelaDeExclusao implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 			painelInferior.setShowJanelaDeExclusao();
+			revalidate();
+			repaint();
 		}
 	}
 }

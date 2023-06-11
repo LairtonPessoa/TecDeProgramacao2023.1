@@ -6,19 +6,15 @@ import java.io.IOException;
 public class Writer {
 
 	private FileWriter writer;
-	
-	public Writer() {
-	}
-	 
-	public void writeData(String diretorio, String msg) {
+	public void writeData(String file, String mensagem, boolean append) {
+
 		try {
-			
-			writer = new FileWriter(diretorio);
-			writer.write(msg);
+			writer = new FileWriter(file, append);
+			writer.write(mensagem);
 			writer.close();
-			
-		} catch (IOException e) {
-			
+		} catch (Exception e) {
 		}
 	}
+	
+	
 }

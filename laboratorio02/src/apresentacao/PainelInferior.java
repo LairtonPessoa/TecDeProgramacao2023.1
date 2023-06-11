@@ -3,16 +3,15 @@ package apresentacao;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.GridBagLayout;
 
 import javax.swing.JPanel;
 
 public class PainelInferior extends JPanel{
 
-	private JanelaDeCadastro janelaDeCadastro;
-	private JanelaDeAtualizacao janelaDeAtualizacao;
-	private JanelaDeListagem janelaDeListagem;
-	private JanelaDeExclusao janelaDeExclusao;
+	protected JanelaDeCadastro janelaDeCadastro;
+	protected JanelaDeAtualizacao janelaDeAtualizacao;
+	protected JanelaDeListagem janelaDeListagem;
+	protected JanelaDeExclusao janelaDeExclusao;
 	private JPanel painelAux;
 	
 	public PainelInferior() {
@@ -23,10 +22,12 @@ public class PainelInferior extends JPanel{
 		janelaDeExclusao = new JanelaDeExclusao();
 		painelAux = new JPanel();
 		painelAux.setVisible(true);
+		painelAux.setBackground(new Color(173, 216, 230));
 		janelaDeCadastro.setPreferredSize(new Dimension(this.getWidth(), this.getHeight()));
 		janelaDeListagem.setPreferredSize(new Dimension(this.getWidth(), this.getHeight()));
 		janelaDeAtualizacao.setPreferredSize(new Dimension(this.getWidth(), this.getHeight()));
 		janelaDeExclusao.setPreferredSize(new Dimension(this.getWidth(), this.getHeight()));
+		
 		
 		setLayout(new CardLayout());
 		this.add(painelAux);
@@ -67,5 +68,7 @@ public class PainelInferior extends JPanel{
 		janelaDeAtualizacao.setVisible(false);
 		janelaDeExclusao.setVisible(false);
 		janelaDeListagem.setVisible(true);
+		this.revalidate();
+		this.repaint();
 	}
 }
