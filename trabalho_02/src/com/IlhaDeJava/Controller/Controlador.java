@@ -12,7 +12,7 @@ import com.IlhaDeJava.Model.Robot;
 import com.IlhaDeJava.Model.Escritor;
 import com.IlhaDeJava.View.TelaDoJogo;
 
-public class Controlador{
+public final class Controlador{
 
 	private TelaDoJogo telaDoJogo;
 	private Plano planoDoJogo;
@@ -29,12 +29,12 @@ public class Controlador{
 	
 	
 	public Controlador() {
-		telaDoJogo = new TelaDoJogo(this);
 		planoDoJogo = new Plano();
+		telaDoJogo = new TelaDoJogo(this);
 		writer = new Escritor();
 		reader = new Leitora();
 		relatorioDasPartidas = new ArrayList<String>();
-		//addAlunoEBugsNaTela();
+		addAlunoEBugsNaTela();
 		
 	}
 	
@@ -59,6 +59,26 @@ public class Controlador{
 		return bugsEncontrados;
 	}
 	
+	public Jogador getJogador() {
+		return jogador;
+	}	
+	
+	public int getNumeroDeCelulasVisitadasVazias() {
+		return numeroDeCelulasVisitadasVazias;
+	}
+	
+	public ArrayList<String> getRelatorioDasPartidas(){
+		return relatorioDasPartidas;
+	}
+	
+	public Plano getPlano() {
+		return planoDoJogo;
+	}
+	
+	public void iniciarJogador(String nome) {
+		jogador = new Jogador(nome);
+	}
+
 	public void addAlunoEBugsNaTela() {
 		
 		for (Entidade alunoOuBug : planoDoJogo.alunosEBugs) {
@@ -94,17 +114,7 @@ public class Controlador{
 		
 	}
 	
-	public void iniciarJogador(String nome) {
-		jogador = new Jogador(nome);
-	}
-
-	public Jogador getJogador() {
-		return jogador;
-	}	
 	
-	public int getNumeroDeCelulasVisitadasVazias() {
-		return numeroDeCelulasVisitadasVazias;
-	}
 	
 	public void attRelatorioDasPartidas() {
 		reader.lerDadosDosClientes("dados/dadosDasPartidas.txt");
@@ -118,8 +128,5 @@ public class Controlador{
 			writer.writeData("dados/dadosDasPartidas.txt", relatorioDeUmaPartida);
 	}
 	
-	public ArrayList<String> getRelatorioDasPartidas(){
-		return relatorioDasPartidas;
-	}
 }
  

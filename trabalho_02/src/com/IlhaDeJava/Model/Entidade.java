@@ -9,7 +9,6 @@ public abstract class Entidade  {
 	private int posicaoXdaEntidade;
 	private int posicaoYdaEntidade;
 	private Plano plano;
-	protected int pontuacao;
 	private ImageIcon iconeDaEntidade;
 	private TipoDaEntidade tipo;
 	
@@ -41,9 +40,7 @@ public abstract class Entidade  {
 		return nome;
 	}
 
-	public int getPontuacao() {
-		return pontuacao;
-	}
+	
 
 	public ImageIcon getIconeDaEntidade() {
 		return iconeDaEntidade;

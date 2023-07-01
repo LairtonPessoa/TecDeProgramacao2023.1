@@ -212,14 +212,13 @@ public class PainelLateral extends JPanel{
 	}
 	
 	public void attPontuacaoDosRobos() {
-		GridBagConstraints gbc = new GridBagConstraints();
 		pontuacaoDoJogador.setText("Pontuação: " + controlador.getJogador().getPontuacaoDoJogador());
 		
 		alunosEncontrados.setText("Alunos: " + controlador.getAlunosEncontrados());
 		bugsEncontrados.setText("Bugs: " + controlador.getBugsEncontrados());
 		
 		labelWalle.setText(Integer.toString(controlador.getPontuacaoDoWalle()));
-		labelBb08.setText( Integer.toString(controlador.getPontuacaoDoBb08()));
+		labelBb08.setText(Integer.toString(controlador.getPontuacaoDoBb08()));
 		labelBumblebee.setText(Integer.toString(controlador.getPontuacaoDoBumblebee())); 
 		
 		

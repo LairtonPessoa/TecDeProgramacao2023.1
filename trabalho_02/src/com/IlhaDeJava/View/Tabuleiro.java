@@ -16,18 +16,13 @@ public class Tabuleiro extends JPanel{
 	private ArrayList<JButton> botoesDoTabuleiro;
 	private ArrayList<Celula> celulas;
 	
-	public Tabuleiro() {
+	public Tabuleiro(ArrayList<Celula> celulas) {
 		botoesDoTabuleiro = new ArrayList<JButton>();
-		celulas = new ArrayList<Celula>();
+		this.celulas = celulas;
 		
 		setLayout(new GridLayout(8,8));
-		for (int i = 1; i <= 8; i++) {
-			for (int j = 1; j <= 8; j++) {
-				Celula celula = new Celula(i, j);
-				
-				botoesDoTabuleiro.add(celula.getBotaoDaCelula());
-				celulas.add(celula);
-			}
+		for (Celula celula : celulas) {
+			botoesDoTabuleiro.add(celula.getBotaoDaCelula());
 		}
 		
 		for (JButton botao : botoesDoTabuleiro) {

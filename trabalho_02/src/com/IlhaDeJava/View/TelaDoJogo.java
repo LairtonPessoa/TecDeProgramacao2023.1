@@ -36,7 +36,7 @@ public final class TelaDoJogo extends JFrame{
 		painelSuperior.getBotaoJogar().addActionListener(new ActionJogar());
 		painelSuperior.setPreferredSize(new Dimension(200,100));
 		
-		tabuleiro = new Tabuleiro();
+		tabuleiro = new Tabuleiro(controlador.getPlano().getCelulas());
 		tabuleiro.setActionOnButtons(new setIconOnTabuleiro());
 		
 		painelLateral = new PainelLateral(controlador);

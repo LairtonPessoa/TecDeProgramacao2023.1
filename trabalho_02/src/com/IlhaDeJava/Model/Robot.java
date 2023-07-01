@@ -4,6 +4,7 @@ import javax.swing.ImageIcon;
 
 public class Robot extends Entidade{
 
+	protected int pontuacao;
 	private int alunosEncontradosPeloRobot;
 	private int bugsEncontradosPeloRobot;
 	private int celulasVisitadasVazias;
@@ -25,6 +26,10 @@ public class Robot extends Entidade{
 	
 	public int getCelulasVisitadasVazias() {
 		return celulasVisitadasVazias;
+	}
+	
+	public int getPontuacao() {
+		return pontuacao;
 	}
 
 	public void incrementarPontuacao() {

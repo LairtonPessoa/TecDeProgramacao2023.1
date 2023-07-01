@@ -5,6 +5,7 @@ import java.io.FileWriter;
 public class Escritor {
 
 	private FileWriter writer;
+	
 	public void writeData(String file, String mensagem) {
 
 		try {

@@ -20,7 +20,6 @@ public class Plano {
 		celulas = new ArrayList<Celula>();
 		robos = new ArrayList<Robot>();
 		alunosEBugs = new ArrayList<Entidade>();
-		tabuleiro = new Tabuleiro();
 		
 		robos.add(new Robot(TipoDaEntidade.ROBOT, "Wall-E", 0, 0, new ImageIcon("Wall-E-Robot.png"), this));
 		robos.add(new Robot(TipoDaEntidade.ROBOT, "BB-08", 0, 0, new ImageIcon("BB-08.png"), this));
@@ -33,6 +32,7 @@ public class Plano {
 			}
 		}
 		
+		tabuleiro = new Tabuleiro(celulas);
 		this.instanciarAlunosEBugs();
 		
 	}

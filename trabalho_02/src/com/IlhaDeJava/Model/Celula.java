@@ -5,8 +5,6 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 
-//import java.util.ArrayList;
-
 public class Celula {
 
 	private int posX;

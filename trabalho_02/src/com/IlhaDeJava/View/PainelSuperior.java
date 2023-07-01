@@ -76,16 +76,19 @@ public class PainelSuperior extends JPanel implements ActionListener{
 
 	
 	public void actionPerformed(ActionEvent e) {
-		String relatorioDaPartida = "Nome do(a) jogador(a): " + controlador.getJogador().getNome()
-				+ "\nRodadas: " + controlador.getJogador().getRodadas() + "\nCelulas Visitadas Vazias: "
-				+ controlador.getNumeroDeCelulasVisitadasVazias() + "\nPontuação do(a) jogador(a): "
-				+ controlador.getJogador().getPontuacaoDoJogador() + "\nAlunos Encontrados: " + controlador.getAlunosEncontrados()
-				+ "\nBugs Encontrados: " + controlador.getBugsEncontrados() + "\nPontuação do Wall-E: "
-				+ controlador.getPontuacaoDoWalle() + "\nPontuação do BB-08: " + controlador.getPontuacaoDoBb08()
-				+ "\nPontuação do Bumblebee: " + controlador.getPontuacaoDoBumblebee();
-
-		JOptionPane.showMessageDialog(null, relatorioDaPartida, "Relatório atual da Partida", JOptionPane.INFORMATION_MESSAGE);
-		
+		try {
+			String relatorioDaPartida = "Nome do(a) jogador(a): " + controlador.getJogador().getNome()
+					+ "\nRodadas: " + controlador.getJogador().getRodadas() + "\nCelulas Visitadas Vazias: "
+					+ controlador.getNumeroDeCelulasVisitadasVazias() + "\nPontuação do(a) jogador(a): "
+					+ controlador.getJogador().getPontuacaoDoJogador() + "\nAlunos Encontrados: " + controlador.getAlunosEncontrados()
+					+ "\nBugs Encontrados: " + controlador.getBugsEncontrados() + "\nPontuação do Wall-E: "
+					+ controlador.getPontuacaoDoWalle() + "\nPontuação do BB-08: " + controlador.getPontuacaoDoBb08()
+					+ "\nPontuação do Bumblebee: " + controlador.getPontuacaoDoBumblebee();
+	
+			JOptionPane.showMessageDialog(null, relatorioDaPartida, "Relatório atual da Partida", JOptionPane.INFORMATION_MESSAGE);
+		}catch(Exception ex) {
+			
+		}
 	}
 	
 }

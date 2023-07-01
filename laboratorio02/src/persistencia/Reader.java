@@ -30,6 +30,7 @@ public class Reader {
 	}
 	
 	public void exclusaoDeAluno(String diretorio, String matricula) {
+		
 		for (Cliente cliente : listaDeClientes.listaClientes) {
 			if(cliente.getMatricula()==Integer.parseInt(matricula)) {
 				listaDeClientes.listaClientes.remove(cliente);
